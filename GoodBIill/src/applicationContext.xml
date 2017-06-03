@@ -87,6 +87,15 @@
 	  <property name="hibernateTemplate" ref="hibernateTemplate"></property>
 	</bean>
 	
+	<bean id="GoodsDao" class="com.jbit.dao.impl.GoodsDaoImpl" parent="baseDaoimpl"></bean>
+	
+	<bean id="GoodsService" class="com.jbit.service.impl.GoodsServiceImpl">
+		<property name="dao" ref="GoodsDao"></property>
+	</bean>
+	
+	<bean id="goodsAction" class="com.jbit.action.GoodsAction">
+		<property name="service" ref="GoodsService"></property>
+	</bean>
 	
 	
 	</beans>
